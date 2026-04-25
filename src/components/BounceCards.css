@@ -1,0 +1,38 @@
+.bounceCardsContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: absolute;
+  width: 260px;
+  aspect-ratio: 1;
+  border: 4px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.45);
+}
+
+.card .image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card .image--empty {
+  background: var(--color-surface, #222);
+}
+
+.card--vertical {
+  width: 200px;
+  aspect-ratio: 9 / 16;
+}
+
+.image--empty--vertical {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

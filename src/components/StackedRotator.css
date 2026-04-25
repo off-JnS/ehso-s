@@ -1,0 +1,118 @@
+.stacked-rotator {
+  position: relative;
+  width: 100%;
+  min-height: 26rem; /* reserve space so following sections don't overlap */
+  display: block;
+  padding-top: 1.25rem;
+}
+
+.rotator-card {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: min(640px, 94%);
+  max-width: 640px;
+  transform-origin: top center;
+  box-sizing: border-box;
+  will-change: transform, opacity;
+  pointer-events: auto;
+  transition: box-shadow 300ms ease;
+}
+
+.rotator-card .about-tile {
+  margin: 0; /* inner tile styles manage spacing */
+  background: linear-gradient(180deg, rgba(34,34,34,0.95), rgba(26,26,26,0.96));
+  border-radius: 18px;
+  padding: 22px 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+.rotator-card.is-top .about-tile {
+  box-shadow: 0 22px 48px rgba(0,0,0,0.36);
+}
+
+.rotator-card.is-out {
+  opacity: 0;
+}
+
+/* make sure inner content scales nicely */
+.rotator-card .about-tile,
+.rotator-card .about-tile-inner {
+  width: 100%;
+}
+
+.about-tile-icon {
+  font-size: 2rem;
+  margin-top: 0;
+}
+
+.about-tile-title {
+  font-size: 1.25rem;
+}
+
+.about-tile-desc {
+  color: rgba(255,255,255,0.75);
+}
+
+@media (min-width: 600px) {
+  .stacked-rotator {
+    min-height: 30rem;
+  }
+  .rotator-card {
+    width: min(520px, 72%);
+  }
+}
+
+/* Mobile-specific fine-tuning */
+@media (max-width: 599.98px) {
+  .stacked-rotator {
+    min-height: 11.5rem; /* reduced height for tighter layout on mobile */
+    padding-top: 0.2rem;
+    margin-top: 1.1rem; /* add a bit more space between text and cards */
+    cursor: pointer;
+  }
+
+  .rotator-card {
+    width: 96%;
+    left: 50%;
+    top: 0.15rem;
+    max-width: none;
+  }
+
+  .rotator-card .about-tile {
+    padding: 12px 10px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.28);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .about-tile-title {
+    font-size: 1.0rem;
+  }
+
+  .about-tile-desc {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .stacked-rotator {
+    min-height: 10rem; /* further reduce for very small screens */
+  }
+
+  .rotator-card .about-tile {
+    padding: 10px 8px;
+  }
+}
+
+/* Focus style for keyboard users */
+.stacked-rotator:focus {
+  outline: none;
+  box-shadow: 0 0 0 6px rgba(249,115,22,0.08);
+  border-radius: 12px;
+}

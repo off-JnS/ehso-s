@@ -1,0 +1,229 @@
+/* ===== Locations heading ===== */
+.locations-stripe-heading {
+  text-align: center;
+  padding: 64px 16px 32px;
+}
+
+/* ===== Location Modal Backdrop ===== */
+.loc-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1100;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: loc-backdrop-in 0.25s ease forwards;
+}
+
+@keyframes loc-backdrop-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ===== Modal Panel ===== */
+.loc-modal {
+  position: relative;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 48px 44px 44px;
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7);
+  animation: loc-modal-in 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  overflow: hidden;
+}
+
+@keyframes loc-modal-in {
+  from { opacity: 0; transform: translateY(28px) scale(0.96); }
+  to   { opacity: 1; transform: translateY(0)   scale(1);    }
+}
+
+/* Orange top accent bar */
+.loc-modal-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: #f97316;
+  border-radius: 20px 20px 0 0;
+}
+
+/* Close button — 44px minimum touch target */
+.loc-modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.55);
+  width: 44px;
+  height: 44px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, color 0.2s;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .loc-modal-close:hover {
+    background: rgba(249, 115, 22, 0.18);
+    color: #f97316;
+    border-color: rgba(249, 115, 22, 0.35);
+  }
+}
+
+/* Header */
+.loc-modal-kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: #f97316;
+  margin: 0 0 8px;
+}
+
+.loc-modal-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.8rem;
+  letter-spacing: 3px;
+  color: #f8f8f8;
+  margin: 0 0 32px;
+  line-height: 1;
+}
+
+/* Info rows */
+.loc-modal-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.loc-modal-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.loc-modal-row-icon {
+  font-size: 1.3rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.loc-modal-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0 0 3px;
+}
+
+.loc-modal-value {
+  font-size: 0.97rem;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.loc-modal-tel {
+  color: #f97316;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.loc-modal-tel:hover {
+  opacity: 0.8;
+}
+
+/* CTA button */
+.loc-modal-cta {
+  display: block;
+  text-align: center;
+  margin-top: 12px;
+  padding: 14px 24px;
+  background: #f97316;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  letter-spacing: 0.3px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .loc-modal-cta:hover {
+    background: #ea6a0a;
+    transform: translateY(-1px);
+  }
+}
+
+/* Coming soon state */
+.loc-modal-coming {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  padding: 8px 0 4px;
+}
+
+.loc-modal-coming-icon {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.loc-modal-coming p {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.loc-modal-coming-sub {
+  font-size: 0.88rem !important;
+  color: rgba(255, 255, 255, 0.42) !important;
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 520px) {
+  .loc-backdrop {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .loc-modal {
+    max-width: 100%;
+    border-radius: 20px 20px 0 0;
+    padding: 40px 24px 36px;
+    animation: loc-modal-up 0.32s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+  }
+
+  @keyframes loc-modal-up {
+    from { opacity: 0; transform: translateY(100%); }
+    to   { opacity: 1; transform: translateY(0);    }
+  }
+
+  .loc-modal-accent {
+    border-radius: 20px 20px 0 0;
+  }
+
+  .loc-modal-title {
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+  }
+}

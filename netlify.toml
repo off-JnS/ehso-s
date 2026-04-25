@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[dev]
+  # Useful when testing Netlify Dev locally
+  command = "npm run dev"
+  port = 5176
+
+[build.environment]
+  NODE_VERSION = "18"

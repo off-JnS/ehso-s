@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import SEO from '../components/SEO'
 
 const STORAGE_KEY = 'ehsos_cookie_consent'
 
@@ -14,6 +15,7 @@ export default function DatenschutzPage() {
 
   return (
     <>
+      <SEO title="Datenschutzerklärung" noindex />
       <Navbar />
       <main>
         <section className="section" style={{ paddingTop: '120px' }}>

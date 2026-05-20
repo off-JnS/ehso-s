@@ -1,12 +1,14 @@
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import SEO from '../components/SEO'
 
 export default function ImpressumPage() {
   useEffect(() => { window.scrollTo(0, 0) }, [])
 
   return (
     <>
+      <SEO title="Impressum" noindex />
       <Navbar />
       <main>
         <section className="section" style={{ paddingTop: '120px' }}>
